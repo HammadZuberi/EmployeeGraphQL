@@ -13,6 +13,10 @@ namespace EmployeeGraphQL.GraphQL.Types
 			Field(e => e.LastName, typeof(StringGraphType)).Description("Lastname Property of Employee");
 			Field(e => e.Title, typeof(StringGraphType)).Description("Title Property of Employee");
 
+			//one to many relationship
+			Field(e => e.Reviews, typeof(ListGraphType<ReviewType>)).Description("list of review for Employee");
+
+
 		}
 	}
 }

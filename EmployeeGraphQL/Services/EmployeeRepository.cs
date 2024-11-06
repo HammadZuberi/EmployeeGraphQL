@@ -16,14 +16,14 @@ namespace EmployeeGraphQL.Services
 		public async Task<List<Employee>> GetAllEmployeesAsync()
 		{
 
-			return await _dbContext.Employees.ToListAsync();
+			return await _dbContext.Employees.Include(r=> r.Reviews).ToListAsync();
 
 		}
 
 		public List<Employee> GetAllEmployees()
 		{
 
-			return _dbContext.Employees.ToList();
+			return _dbContext.Employees.Include(r => r.Reviews).ToList();
 		}
 
 		public Employee GetEmployeeById(int id)

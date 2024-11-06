@@ -12,6 +12,9 @@ namespace EmployeeGraphQL.GraphQL.Types
 			Field<StringGraphType>("LastName");
 			Field<StringGraphType>("Email");
 			Field<StringGraphType>("Title");
+
+			//adding review for em
+			Field<ListGraphType<ReviewInputType>>("Reviews");
 		}
 
     }
